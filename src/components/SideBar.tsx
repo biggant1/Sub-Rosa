@@ -10,7 +10,7 @@ export type SelectedOptions = "dashboard" | "groups" | "credits" | "settings";
 
 export default function SideBar({ selected }: { selected?: SelectedOptions }) {
   return (
-    <nav className="flex flex-col items-center bg-rose-900 w-80 h-screen max-w-[20vw] absolute left-0 top-0">
+    <nav className="flex flex-col items-center bg-rose-900 w-80 h-screen max-w-[20vw] sticky left-0 top-0">
       <Logo className="w-1/2 h-auto pt-2"></Logo>
       <div className="flex flex-grow flex-col items-center justify-between pt-12 w-full">
         <div className="flex flex-col items-center gap-8 w-full">
