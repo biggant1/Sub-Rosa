@@ -14,7 +14,7 @@ export default function Button({
 }) {
   return (
     <button
-      className={`${className} w-[80%] bg-rose-950 rounded-3xl text-white text-4xl text-ellipsis uppercase whitespace-nowrap overflow-hidden px-6 ${baloo.className}`}
+      className={`${className} w-[80%] bg-rose-950 rounded-3xl text-rose-100 text-4xl text-ellipsis uppercase whitespace-nowrap overflow-hidden px-6 ${baloo.className}`}
       style={{ height: height, minHeight: height }}
     >
       {children}
