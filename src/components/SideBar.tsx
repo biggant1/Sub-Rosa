@@ -5,6 +5,7 @@ import GroupsIcon from "./Svgs/GroupsIcon";
 import CreditsIcon from "./Svgs/CreditsIcon";
 import SettingsIcon from "./Svgs/SettingsIcon";
 import LogoutIcon from "./Svgs/LogoutIcon";
+import Link from "next/link";
 
 export type SelectedOptions = "dashboard" | "groups" | "credits" | "settings";
 
@@ -59,12 +60,13 @@ function SideBarItem({
       }`}
     >
       <>{icon}</>
-      <p
+      <Link
         className={`text-rose-100 ${selected ? "text-rose-500 font-bold" : ""}`}
         style={{ fontSize: "min(1.8rem, 1.5vmax)" }}
+        href="/"
       >
         {text}
-      </p>
+      </Link>
     </div>
   );
 }
