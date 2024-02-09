@@ -1,6 +1,6 @@
 import colors from "tailwindcss/colors";
 
-export default function DashboardIcon({
+export default function CreateReportIcon({
   color = colors.rose[100],
   className = "",
 }: {
