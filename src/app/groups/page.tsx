@@ -1,5 +1,6 @@
 import SideBar from "@/components/SideBar";
 import EditIcon from "@/components/Svgs/EditIcon";
+import SquareButton from "@/components/SquareButton";
 import { Baloo_Chettan_2, Lexend } from "next/font/google";
 import Link from "next/link";
 
@@ -40,27 +41,22 @@ export default function Groups() {
 
 function GroupButton({ newReports = 0 }: { newReports?: number }) {
   return (
-    <div className="w-72 h-72 rounded-xl bg-rose-900 grid place-items-center relative">
-      <Link
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-10"
-        href="/groups/groupID"
-      ></Link>
-      <p className="pl-5 pr-5 mb-3 line-clamp-2 break-all text-ellipsis uppercase text-rose-100 text-3xl">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae vero quo
-        veritatis. Maiores praesentium esse minima deserunt blanditiis in
-        laudantium.
-      </p>
-      <Link
-        href="/groups/TODO/edit"
-        className="absolute top-2 right-5 w-10 h-10 z-20"
-      >
-        <EditIcon></EditIcon>
-      </Link>
-      <p
-        className={`absolute bottom-5 left-1/2 -translate-x-1/2 text-rose-100 text-xl ${balooReg.className}`}
-      >
-        {newReports ? "" : `8 new ${newReports == 1 ? "report" : "reports"}`}
-      </p>
-    </div>
+    <SquareButton
+      mainText={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cupiditate dolore architecto perspiciatis voluptatem ipsum repellat tempora ipsam magnam id`}
+      to="/groups/groupId"
+      additionalTopRight={
+        <Link
+          href={"/groups/groupId/edit"}
+          className="absolute top-2 right-5 w-10 h-10 z-20"
+        >
+          <EditIcon></EditIcon>
+        </Link>
+      }
+      additionalBottomText={
+        newReports
+          ? ""
+          : `${newReports} new ${newReports == 1 ? "report" : "reports"}`
+      }
+    ></SquareButton>
   );
 }
