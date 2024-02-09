@@ -1,7 +1,8 @@
 import type { AriaRole } from "react";
 import colors from "tailwindcss/colors";
 
-export default function DashboardIcon({
+/**  this is clearly not an edit icon and is clearly the create a report icon */
+export default function EditIcon({
   color = colors.rose[100],
   role = "",
   tabIndex,

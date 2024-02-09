@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import { IconedCard } from "@/components/IconedCard";
 import SideBar from "@/components/SideBar";
 import GroupsIcon from "@/components/Svgs/GroupsIcon";
 import UnreadReportsIcon from "@/components/Svgs/UnreadReportsIcon";
@@ -8,34 +9,31 @@ export default function Dashboard() {
     <main className="flex w-screen h-screen">
       <SideBar selected="dashboard"></SideBar>
       <div className="flex gap-10 items-center justify-center flex-grow h-screen">
-        <div className="flex flex-col justify-center w-[22vw] bg-rose-900 h-4/5 rounded-[60px] overflow-hidden">
-          <div className="flex justify-center items-center self-start gap-3 pt-6 w-full h-24 flex-initial">
-            <GroupsIcon className="w-16 h-auto"></GroupsIcon>
-            <h1 className="text-rose-100 text-3xl w-32">RECENT GROUPS</h1>
-          </div>
-          <div className="pt-8 flex flex-col items-center gap-6 flex-1 overflow-y-auto pb-8 no-scrollbar">
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-            <Button>Hello World</Button>
-          </div>
-        </div>
+        <IconedCard
+          title="RECENT GROUPS"
+          icon={<GroupsIcon className="w-16 h-auto"></GroupsIcon>}
+        >
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+          <Button>Hello World</Button>
+        </IconedCard>
         <div className="flex flex-col justify-center w-[40vw] bg-rose-900 h-4/5 rounded-[60px] overflow-hidden">
           <div className="flex justify-center items-center w-full self-start gap-3 pt-6 h-24 flex-initial">
             <UnreadReportsIcon className="w-16 h-auto"></UnreadReportsIcon>

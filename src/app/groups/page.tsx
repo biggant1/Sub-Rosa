@@ -40,21 +40,21 @@ export default function Groups() {
 
 function GroupButton({ newReports = 0 }: { newReports?: number }) {
   return (
-    <div
-      className="w-72 h-72 rounded-xl bg-rose-900 grid place-items-center relative"
-      role="button"
-      tabIndex={0}
-    >
+    <div className="w-72 h-72 rounded-xl bg-rose-900 grid place-items-center relative">
+      <Link
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-10"
+        href="/groups/groupID"
+      ></Link>
       <p className="pl-5 pr-5 mb-3 line-clamp-2 break-all text-ellipsis uppercase text-rose-100 text-3xl">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae vero quo
         veritatis. Maiores praesentium esse minima deserunt blanditiis in
         laudantium.
       </p>
-      <Link href="/groups/TODO">
-        <EditIcon
-          role={"button"}
-          className="absolute top-2 right-2 w-10 h-10"
-        ></EditIcon>
+      <Link
+        href="/groups/TODO/edit"
+        className="absolute top-2 right-5 w-10 h-10 z-20"
+      >
+        <EditIcon></EditIcon>
       </Link>
       <p
         className={`absolute bottom-5 left-1/2 -translate-x-1/2 text-rose-100 text-xl ${balooReg.className}`}
