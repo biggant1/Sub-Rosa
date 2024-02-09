@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
-import Logo from "./Svgs/Logo";
-import DashboardIcon from "./Svgs/DashboardIcon";
-import GroupsIcon from "./Svgs/GroupsIcon";
-import CreditsIcon from "./Svgs/CreditsIcon";
-import SettingsIcon from "./Svgs/SettingsIcon";
-import LogoutIcon from "./Svgs/LogoutIcon";
+import Logo from "../svgs/Logo";
+import DashboardIcon from "../svgs/DashboardIcon";
+import GroupsIcon from "../svgs/GroupsIcon";
+import CreditsIcon from "../svgs/CreditsIcon";
+import SettingsIcon from "../svgs/SettingsIcon";
+import LogoutIcon from "../svgs/LogoutIcon";
 import Link from "next/link";
 
 export type SelectedOptions = "dashboard" | "groups" | "credits" | "settings";

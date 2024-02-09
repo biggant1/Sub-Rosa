@@ -1,5 +1,5 @@
-import LoginIcon from "@/components/Svgs/LoginIcon";
-import Logo from "@/components/Svgs/Logo";
+import LoginIcon from "@/components/svgs/LoginIcon";
+import Logo from "@/components/svgs/Logo";
 import Image from "next/image";
 
 import { Gowun_Batang, Kodchasan } from "next/font/google";

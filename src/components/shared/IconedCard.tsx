@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export function IconedCard({
   title,
   icon,
-  className,
+  className = "",
   children,
 }: {
   title: string;

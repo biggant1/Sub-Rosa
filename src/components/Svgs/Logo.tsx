@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import colors from "tailwindcss/colors";
 
 export default function Logo({

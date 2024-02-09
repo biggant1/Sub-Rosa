@@ -1,8 +1,8 @@
-import Button from "@/components/Button";
-import { IconedCard } from "@/components/IconedCard";
-import SideBar from "@/components/SideBar";
-import GroupsIcon from "@/components/Svgs/GroupsIcon";
-import UnreadReportsIcon from "@/components/Svgs/UnreadReportsIcon";
+import Button from "@/components/shared/Button";
+import { IconedCard } from "@/components/shared/IconedCard";
+import SideBar from "@/components/shared/SideBar";
+import GroupsIcon from "@/components/svgs/GroupsIcon";
+import UnreadReportsIcon from "@/components/svgs/UnreadReportsIcon";
 
 export default function Dashboard() {
   return (

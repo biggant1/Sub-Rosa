@@ -19,7 +19,7 @@ export default function SquareButton({
     <div className="w-72 h-72 rounded-xl bg-rose-900 grid place-items-center relative">
       <Link
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-10"
-        href="/groups/groupID"
+        href={to}
       ></Link>
       <p className="pl-5 pr-5 mb-3 line-clamp-2 text-center text-ellipsis uppercase text-rose-100 text-3xl">
         {mainText}
