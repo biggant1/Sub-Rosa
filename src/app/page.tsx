@@ -17,7 +17,7 @@ export default function Home() {
           className={`flex items-center gap-2 text-4xl mr-16 text-rose-300 ${kodchasan.className}`}
         >
           <LoginIcon></LoginIcon>
-          LOGIN
+          SIGNUP
         </Link>
       </nav>
       <div className="flex w-screen flex-grow">

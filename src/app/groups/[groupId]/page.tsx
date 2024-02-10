@@ -2,7 +2,7 @@ import { paramsType } from "@/app/lib/types";
 import GroupAdmin from "./GroupAdmin";
 import GroupMember from "./GroupMember";
 
-const isAdmin = false;
+const isAdmin = true;
 
 export default function SingleGroup({ params }: { params: paramsType }) {
   return isAdmin ? (
