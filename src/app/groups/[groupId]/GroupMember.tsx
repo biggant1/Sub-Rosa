@@ -5,7 +5,6 @@ import CreateReportIcon from "@/components/svgs/CreateReportIcon";
 import JoinUrlIcon from "@/components/svgs/JoinUrlIcon";
 import LeaveGroupIcon from "@/components/svgs/LeaveGroupIcon";
 import ViewReportsIcon from "@/components/svgs/ViewReportsIcon";
-import { Lexend } from "next/font/google";
 
 type paramsType = { groupId: string };
 
