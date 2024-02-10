@@ -1,3 +1,3 @@
-export function Privacy() {
-  return "TODO PRIVACY";
+export default function Privacy() {
+  return <div>TODO</div>;
 }

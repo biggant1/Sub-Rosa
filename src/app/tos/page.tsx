@@ -1,3 +1,3 @@
-export function TOS() {
-  return "TODO TOS";
+export default function TOS() {
+  return <div>TODO</div>;
 }

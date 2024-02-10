@@ -12,7 +12,7 @@ export default function Home() {
       <nav className="bg-[#A82D53] h-24 w-screen flex justify-between items-center">
         <Logo color="#FDA4AF" className="size-24 ml-24"></Logo>
         <Link
-          href="/api/auth/signin"
+          href="/api/auth/signin?callbackUrl=%2Fdashboard"
           className={`flex items-center gap-2 text-4xl mr-16 text-rose-300 ${kodchasan.className}`}
         >
           <LoginIcon></LoginIcon>
