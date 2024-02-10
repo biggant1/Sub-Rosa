@@ -1,11 +1,15 @@
+"use client";
+
 import { ReactNode } from "react";
-import Logo from "../svgs/Logo";
-import DashboardIcon from "../svgs/DashboardIcon";
-import GroupsIcon from "../svgs/GroupsIcon";
-import CreditsIcon from "../svgs/CreditsIcon";
-import SettingsIcon from "../svgs/SettingsIcon";
-import LogoutIcon from "../svgs/LogoutIcon";
+import Logo from "@/components/svgs/Logo";
+import DashboardIcon from "@/components/svgs/DashboardIcon";
+import GroupsIcon from "@/components/svgs/GroupsIcon";
+import CreditsIcon from "@/components/svgs/CreditsIcon";
+import SettingsIcon from "@/components/svgs/SettingsIcon";
+import LogoutIcon from "@/components/svgs/LogoutIcon";
 import Link from "next/link";
+import { doNothing } from "@/app/lib/shared";
+import { signOut } from "next-auth/react";
 
 export type SelectedOptions = "dashboard" | "groups" | "credits" | "settings";
 
@@ -40,7 +44,11 @@ export default function SideBar({ selected }: { selected?: SelectedOptions }) {
             text="SETTINGS"
             selected={selected == "settings"}
           ></SideBarItem>
-          <SideBarItem icon={<LogoutIcon />} text="LOGOUT"></SideBarItem>
+          <SideBarItem
+            icon={<LogoutIcon />}
+            text="LOGOUT"
+            onClick={() => signOut({ callbackUrl: "/" })}
+          ></SideBarItem>
         </div>
       </div>
     </nav>
@@ -51,11 +59,13 @@ function SideBarItem({
   icon,
   text,
   to = "",
+  onClick = doNothing,
   selected = false,
 }: {
   icon: ReactNode;
   text: string;
   to?: string;
+  onClick?: () => void;
   selected?: boolean;
 }) {
   return (
@@ -64,6 +74,7 @@ function SideBarItem({
       className={`flex flex-grow justify-start items-center gap-4 [&_svg]:h-12 w-[85%] ${
         selected ? "[&_path]:fill-rose-500" : ""
       }`}
+      onClick={onClick}
     >
       <>{icon}</>
       <p

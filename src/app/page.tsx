@@ -1,6 +1,5 @@
 import LoginIcon from "@/components/svgs/LoginIcon";
 import Logo from "@/components/svgs/Logo";
-import Image from "next/image";
 
 import { Gowun_Batang, Kodchasan } from "next/font/google";
 import Link from "next/link";
@@ -13,11 +12,11 @@ export default function Home() {
       <nav className="bg-[#A82D53] h-24 w-screen flex justify-between items-center">
         <Logo color="#FDA4AF" className="size-24 ml-24"></Logo>
         <Link
-          href="/signup"
+          href="/api/auth/signin"
           className={`flex items-center gap-2 text-4xl mr-16 text-rose-300 ${kodchasan.className}`}
         >
           <LoginIcon></LoginIcon>
-          SIGNUP
+          LOGIN
         </Link>
       </nav>
       <div className="flex w-screen flex-grow">
