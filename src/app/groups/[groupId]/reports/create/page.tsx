@@ -15,9 +15,13 @@ export default function GroupMember({
       <div className="w-full flex flex-col items-center justify-center flex-grow">
         <Heading title={`ROOM 2344`}></Heading>
         <div className="flex flex-col gap-10 flex-grow w-full pl-12 pb-10">
-          <LabeledInput label="TITLE"></LabeledInput>
+          <LabeledInput label="TITLE" name="title"></LabeledInput>
           <RefreshableInput label="ANONYMIZED TITLE"></RefreshableInput>
-          <LabeledInput label="BODY" multiline={true}></LabeledInput>
+          <LabeledInput
+            label="BODY"
+            multiline={true}
+            name="body"
+          ></LabeledInput>
           <RefreshableInput
             label="ANONYMIZED BODY"
             multiline={true}

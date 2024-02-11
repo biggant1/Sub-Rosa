@@ -42,6 +42,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  Groups        Group[]   @relation("Group_members")
+  OwnedGroups   Group[]   @relation("Group_owners")
 }
 
 model VerificationToken {
@@ -50,4 +52,21 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Group {
+  id      String   @id @default(cuid())
+  name    String   @unique
+  members User[]   @relation("Group_members")
+  owners  User[]   @relation("Group_owners")
+  Report  Report[]
+}
+
+model Report {
+  id              String   @id @default(cuid())
+  group           Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId         String
+  title           String
+  body            String
+  approximateDate DateTime
 }

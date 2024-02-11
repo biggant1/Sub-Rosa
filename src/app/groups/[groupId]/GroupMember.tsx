@@ -16,9 +16,9 @@ export default function GroupMember({
   return (
     <main className="flex w-screen h-screen">
       <SideBar selected="groups"></SideBar>
-      <div className="flex flex-col items-center justify-center flex-grow h-screen overflow-y-auto">
+      <div className="flex flex-col items-center justify-center flex-grow h-screen">
         <Heading title={"ROOM 2344"}></Heading>
-        <div className="flex gap-10 items-start justify-center flex-grow h-screen">
+        <div className="flex gap-10 items-start justify-center flex-grow">
           <div className="flex flex-col items-center justify-between py-24 w-[42vw] min-w-[45rem] bg-rose-900 h-[90%] rounded-[60px] mt-4">
             <GroupAction url={`/groups/${groupId}/reports/create`}>
               <CreateReportIcon></CreateReportIcon>

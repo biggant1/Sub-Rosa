@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate:postgres": "dotenv -e .env.development.local -- npx prisma migrate deploy",
+    "postinstall": "prisma generate",
+    "migrate:postgres": "dotenv -e .env.development.local -- npx prisma migrate dev",
     "introspect": "dotenv -e .env.development.local -- npx prisma introspect",
     "studio": "dotenv -e .env.development.local -- npx prisma studio"
   },

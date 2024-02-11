@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/lib/auth";
+import { partialAuthOptions } from "../lib/partialAuthOptions";
 
 export default async function Page() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(partialAuthOptions);
   return <pre>{JSON.stringify(session, null, 2)}</pre>;
 }

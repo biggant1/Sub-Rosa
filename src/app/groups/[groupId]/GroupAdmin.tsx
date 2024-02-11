@@ -9,7 +9,6 @@ import GroupSettingsIcon from "@/components/svgs/GroupSettingsIcon";
 import JoinUrlIcon from "@/components/svgs/JoinUrlIcon";
 import NewReportsIcon from "@/components/svgs/NewReportsIcon";
 import ViewReportsIcon from "@/components/svgs/ViewReportsIcon";
-import { Lexend } from "next/font/google";
 
 export default function GroupAdmin({
   params: { groupId },
@@ -19,9 +18,9 @@ export default function GroupAdmin({
   return (
     <main className="flex w-screen h-screen">
       <SideBar selected="groups"></SideBar>
-      <div className="flex flex-col items-center justify-center flex-grow h-screen overflow-y-auto">
+      <div className="flex flex-col items-center justify-center flex-grow h-screen">
         <Heading title={"ROOM 2344"}></Heading>
-        <div className="flex gap-10 items-start justify-center flex-grow h-screen">
+        <div className="flex gap-10 items-start justify-center flex-grow">
           <IconedCard
             icon={<NewReportsIcon className="w-16 h-auto"></NewReportsIcon>}
             className="h-[90%] mt-4 [&>h1]:w-52"
