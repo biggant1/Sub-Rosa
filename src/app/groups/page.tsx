@@ -4,6 +4,10 @@ import { Baloo_Chettan_2 } from "next/font/google";
 import Link from "next/link";
 import Heading from "@/components/groups/Heading";
 import GroupSettingsIcon from "@/components/svgs/GroupSettingsIcon";
+import getGroups from "../actions/getGroups";
+import { use } from "react";
+import { getServerSession } from "next-auth";
+import { partialAuthOptions } from "../lib/partialAuthOptions";
 
 const balooBold = Baloo_Chettan_2({ weight: "700", subsets: ["latin"] });
 
@@ -29,14 +33,14 @@ export default function Groups() {
           </div>
         </Heading>
         <div className="flex-grow w-full pl-12 pr-12 flex flex-wrap gap-6 content-start items-start">
-          <GroupButton isAdmin={true} newReports={2}></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
-          <GroupButton></GroupButton>
+          {use(getGroups()).map((group) => (
+            <GroupButton
+              isAdmin={group.isOwner}
+              key={group.id}
+              to={`/groups/${group.id}`}
+              groupName={group.name}
+            ></GroupButton>
+          ))}
         </div>
       </div>
     </main>
@@ -46,18 +50,22 @@ export default function Groups() {
 function GroupButton({
   newReports = 0,
   isAdmin = false,
+  groupName,
+  to,
 }: {
   newReports?: number;
   isAdmin?: boolean;
+  groupName: string;
+  to: string;
 }) {
   return (
     <SquareButton
-      mainText={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cupiditate dolore architecto perspiciatis voluptatem ipsum repellat tempora ipsam magnam id`}
-      to="/groups/groupId"
+      mainText={groupName}
+      to={to}
       additionalTopRight={
         isAdmin ? (
           <Link
-            href={"/groups/groupId/settings"}
+            href={`${to}/settings`}
             className="absolute top-2 right-2 w-10 h-10 z-20"
           >
             <GroupSettingsIcon className="h-9 w-9"></GroupSettingsIcon>

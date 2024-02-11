@@ -6,14 +6,21 @@ import { prisma } from "../lib/db";
 import { getRandomIntInclusive } from "../lib/shared";
 import { redirect } from "next/navigation";
 
+const response = {
+  error: true,
+  errorMsg: "",
+};
+
 export default async function submitReportForm(
   anonTitle: string,
   anonBody: string,
   groupId: string
 ) {
-  if (!anonTitle || !anonBody) return;
+  if (!anonTitle || !anonBody)
+    return { ...response, errorMsg: "invalid title or body" };
   const session = await getServerSession(partialAuthOptions);
-  if (!session || !session.user.id) return;
+  if (!session || !session.user.id)
+    return { ...response, errorMsg: "invalid session" };
 
   const group = await prisma.group.findUnique({
     where: {
@@ -23,8 +30,9 @@ export default async function submitReportForm(
       members: true,
     },
   });
-  if (!group) return;
-  if (!group.members.some((member) => member.id == session.user.id)) return;
+  if (!group) return { ...response, errorMsg: "invalid group id" };
+  if (!group.members.some((member) => member.id == session.user.id))
+    return { ...response, errorMsg: "user is not a member of the group" };
 
   const uploadDate = new Date(
     Date.now() + getRandomIntInclusive(-3 * 1000 * 86400, 3 * 1000 * 86400)
@@ -43,4 +51,5 @@ export default async function submitReportForm(
   });
 
   redirect(`/groups/${newGroup.groupId}`);
+  return { error: false, errorMsg: "" };
 }

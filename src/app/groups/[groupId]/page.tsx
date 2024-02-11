@@ -1,13 +1,16 @@
 import { paramsType } from "@/app/lib/types";
 import GroupAdmin from "./GroupAdmin";
 import GroupMember from "./GroupMember";
-
-const isAdmin = true;
+import getGroup from "@/app/actions/getGroup";
+import { use } from "react";
 
 export default function SingleGroup({ params }: { params: paramsType }) {
-  return isAdmin ? (
-    <GroupAdmin params={params} />
+  const group = use(getGroup(params.groupId));
+  if (!group) return <></>;
+
+  return group?.isOwner ? (
+    <GroupAdmin group={group} />
   ) : (
-    <GroupMember params={params} />
+    <GroupMember group={group} />
   );
 }

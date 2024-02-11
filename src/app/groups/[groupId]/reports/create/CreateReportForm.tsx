@@ -70,8 +70,13 @@ export default function CreateReportForm({ groupId }: { groupId: string }) {
       <button
         type="button"
         onClick={async (e) => {
-          (e.target as HTMLButtonElement).disabled = true;
-          await submitReportForm(anonTitle, anonBody, groupId);
+          let button = e.target as HTMLButtonElement;
+          button.disabled = true;
+          let response = await submitReportForm(anonTitle, anonBody, groupId);
+          if (!response.error) return;
+
+          alert(response.errorMsg);
+          button.disabled = false;
         }}
         className="w-4/6 min-w-96 bg-rose-800 rounded-lg h-12 text-rose-100 text-xl hover:bg-rose-950 disabled:bg-black"
       >
