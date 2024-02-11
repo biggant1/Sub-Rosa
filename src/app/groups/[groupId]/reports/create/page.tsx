@@ -1,10 +1,9 @@
 import { paramsType } from "@/app/lib/types";
 import Heading from "@/components/groups/Heading";
-import LabeledInput from "@/components/groups/createreport/LabeledInput";
 import SideBar from "@/components/shared/SideBar";
-import RefreshIcon from "@/components/svgs/RefreshIcon";
+import CreateReportForm from "./CreateReportForm";
 
-export default function GroupMember({
+export default function CreateReport({
   params: { groupId },
 }: {
   params: paramsType;
@@ -14,39 +13,8 @@ export default function GroupMember({
       <SideBar selected="groups"></SideBar>
       <div className="w-full flex flex-col items-center justify-center flex-grow">
         <Heading title={`ROOM 2344`}></Heading>
-        <div className="flex flex-col gap-10 flex-grow w-full pl-12 pb-10">
-          <LabeledInput label="TITLE" name="title"></LabeledInput>
-          <RefreshableInput label="ANONYMIZED TITLE"></RefreshableInput>
-          <LabeledInput
-            label="BODY"
-            multiline={true}
-            name="body"
-          ></LabeledInput>
-          <RefreshableInput
-            label="ANONYMIZED BODY"
-            multiline={true}
-          ></RefreshableInput>
-        </div>
+        <CreateReportForm groupId={groupId}></CreateReportForm>
       </div>
     </main>
-  );
-}
-
-function RefreshableInput({
-  label,
-  multiline = false,
-}: {
-  label: string;
-  multiline?: boolean;
-}) {
-  return (
-    <LabeledInput
-      label={label}
-      disabled={true}
-      multiline={multiline}
-      additionalComponent={
-        <RefreshIcon className="h-12 flex-shrink-0 mt-1"></RefreshIcon>
-      }
-    ></LabeledInput>
   );
 }

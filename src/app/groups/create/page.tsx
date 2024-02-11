@@ -1,6 +1,6 @@
 import SideBar from "@/components/shared/SideBar";
 import Heading from "@/components/groups/Heading";
-import Form from "./CreateGroupForm";
+import CreateGroupForm from "./CreateGroupForm";
 import { prisma } from "@/app/lib/db";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -38,7 +38,7 @@ export default function Groups() {
       <div className="flex flex-col items-center justify-center flex-grow h-screen">
         <Heading title="Create a group"></Heading>
         <div className="items-start flex-grow w-full pl-14 pt-[14vmin]">
-          <Form onSubmit={handleSubmit}></Form>
+          <CreateGroupForm onSubmit={handleSubmit}></CreateGroupForm>
         </div>
       </div>
     </main>

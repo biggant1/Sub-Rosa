@@ -1,16 +1,11 @@
-"use client";
-
 import { FormHandler } from "@/app/lib/types";
 import LabeledInput from "@/components/groups/createreport/LabeledInput";
-import { useState } from "react";
 
 export default function CreateGroupForm({
   onSubmit,
 }: {
   onSubmit: FormHandler;
 }) {
-  const [groupName, setGroupName] = useState("");
-
   return (
     <form action={onSubmit} className="w-full flex flex-col gap-10 ">
       <LabeledInput

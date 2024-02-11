@@ -1,12 +1,10 @@
+import { IconProps } from "@/app/lib/types";
 import colors from "tailwindcss/colors";
 
 export default function RefreshIcon({
   color = colors.rose[900],
-  className = "",
-}: {
-  color?: string;
-  className?: string;
-}) {
+  ...rest
+}: IconProps) {
   return (
     <svg
       width="73"
@@ -14,7 +12,7 @@ export default function RefreshIcon({
       viewBox="0 0 73 74"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...rest}
     >
       <path
         fillRule="evenodd"

@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
 export type paramsType = { groupId: string };
 
@@ -10,3 +10,7 @@ type DD = `${0}${oneToNine}` | `${1 | 2}${zeroToNine}` | `3${0 | 1}`;
 export type dateString = `${YYYY}-${MM}-${DD}`;
 
 export type FormHandler = (formData: FormData) => void;
+
+export interface IconProps extends ComponentPropsWithoutRef<"svg"> {
+  color?: string;
+}
