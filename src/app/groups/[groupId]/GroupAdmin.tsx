@@ -1,4 +1,5 @@
 import { group } from "@/app/actions/getGroup";
+import CopyJoinUrlButton from "@/components/groups/CopyJoinUrlButton";
 import GroupAction from "@/components/groups/GroupAction";
 import Heading from "@/components/groups/Heading";
 import Button from "@/components/shared/Button";
@@ -6,7 +7,6 @@ import { IconedCard } from "@/components/shared/IconedCard";
 import SideBar from "@/components/shared/SideBar";
 import CreateReportIcon from "@/components/svgs/CreateReportIcon";
 import GroupSettingsIcon from "@/components/svgs/GroupSettingsIcon";
-import JoinUrlIcon from "@/components/svgs/JoinUrlIcon";
 import NewReportsIcon from "@/components/svgs/NewReportsIcon";
 import ViewReportsIcon from "@/components/svgs/ViewReportsIcon";
 
@@ -35,10 +35,7 @@ export default function GroupAdmin({ group }: { group: group }) {
               <ViewReportsIcon></ViewReportsIcon>
               VIEW ALL REPORTS
             </GroupAction>
-            <GroupAction url={``}>
-              <JoinUrlIcon></JoinUrlIcon>
-              COPY JOIN URL
-            </GroupAction>
+            {<CopyJoinUrlButton joinId={group.joinId as string} />}
             <GroupAction url={`/groups/${group.id}/settings`}>
               <GroupSettingsIcon></GroupSettingsIcon>
               GROUP SETTINGS

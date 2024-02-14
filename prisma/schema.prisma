@@ -57,16 +57,17 @@ model VerificationToken {
 model Group {
   id      String   @id @default(cuid())
   name    String   @unique
+  joinId  String   @unique @default(uuid())
+  Report  Report[]
   members User[]   @relation("Group_members")
   owners  User[]   @relation("Group_owners")
-  Report  Report[]
 }
 
 model Report {
-  id              String   @id @default(cuid())
-  group           Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  id              String   @id @default(uuid())
   groupId         String
   title           String
   body            String
   approximateDate DateTime
+  group           Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
 }
